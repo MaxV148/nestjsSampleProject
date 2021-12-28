@@ -1,0 +1,27 @@
+
+###Create new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email" : "gtdggd@fgdfgfd.com",
+  "password" : "3few3s3wf"
+}
+
+###Find a user by id
+GET http://localhost:3000/auth/3
+
+###Find all users by email
+GET http://localhost:3000/auth/?email=fdgd@fff.com
+
+### Delete a user
+DELETE http://localhost:3000/auth/1233
+
+### Update a user
+
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+  "email" : "aaaa@bbbb.com"
+}
