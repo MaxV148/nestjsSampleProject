@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { IUserService } from './UserInterfaces';
 
 @Injectable()
-export class UsersService {
+export class UsersService implements IUserService {
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
   create(email: string, password: string) {
     const user = this.repo.create({ email, password });

@@ -7,15 +7,16 @@ import { UsersService } from './users.service';
 import { promisify } from 'util';
 import { randomBytes, scrypt as _scrypt } from 'crypto';
 import * as Buffer from 'buffer';
+import { IAuthService } from './UserInterfaces';
 
 //oder bycrypt
 const scrypt = promisify(_scrypt);
 
 @Injectable()
-export class AuthService {
+export class AuthService implements IAuthService {
   constructor(private userService: UsersService) {}
 
-  async signup(email: string, password: string) {
+  async signUp(email: string, password: string) {
     //See if email is in use
     const user = await this.userService.find(email);
     if (user.length > 0) {
@@ -39,7 +40,7 @@ export class AuthService {
     //return the user
     return newUser;
   }
-  async signin(email: string, password: string) {
+  async signIn(email: string, password: string) {
     const [user] = await this.userService.find(email);
     if (!user) {
       throw new NotFoundException('user not found');

@@ -1,7 +1,8 @@
 import { AfterInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { IUser } from './UserInterfaces';
 
 @Entity()
-export class User {
+export class User implements IUser {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
@@ -10,8 +11,7 @@ export class User {
   password: string;
 
   //Logging
-
-  @AfterInsert() //Hook
+  @AfterInsert() //Hook TypORM
   logInset() {
     console.log('Inserted User ID: ' + this.id);
   }
