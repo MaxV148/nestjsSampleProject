@@ -4,8 +4,17 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email" : "gtdggd@fgdfgfd.com",
-  "password" : "3few3s3wf"
+  "email" : "aghst2@gg.com",
+  "password" : "meinpassword"
+}
+
+###Create sign in a user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email" : "aghst2@gg.com",
+  "password" : "meinpassword"
 }
 
 ###Find a user by id
