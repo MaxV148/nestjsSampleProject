@@ -4,7 +4,7 @@
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true,//für die cookie session
+    "esModuleInterop": false,//für die cookie session
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
