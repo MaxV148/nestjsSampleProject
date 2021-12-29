@@ -4,18 +4,24 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email" : "aghst2@gg.com",
-  "password" : "meinpassword"
+  "email" : "max@gmx.com",
+  "password" : "7tgvbnko987ztg"
 }
 
-###Create sign in a user
+###Create sign in existing user
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email" : "aghst2@gg.com",
-  "password" : "meinpassword"
+  "email" : "max@gmx.com",
+  "password" : "7tgvbnko987ztg"
 }
+
+###Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+### Sign out
+POST http://localhost:3000/auth/signout
 
 ###Find a user by id
 GET http://localhost:3000/auth/3
