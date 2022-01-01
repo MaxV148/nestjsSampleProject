@@ -13,7 +13,7 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email" : "max@gmx.com",
+  "email" : "tdrdg@gmx.com",
   "password" : "7tgvbnko987ztg"
 }
 
