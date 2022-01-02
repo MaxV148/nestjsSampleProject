@@ -1,5 +1,12 @@
-import { AfterInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  AfterInsert,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { IUser } from './UserInterfaces';
+import { Report } from '../reports/report.entity';
 
 @Entity()
 export class User implements IUser {
@@ -9,6 +16,12 @@ export class User implements IUser {
   email: string;
   @Column()
   password: string;
+
+  @Column({ default: true })
+  admin: boolean;
+
+  @OneToMany(() => Report, (report: Report) => report.user)
+  reports: Report[];
 
   //Logging
   @AfterInsert() //Hook TypORM

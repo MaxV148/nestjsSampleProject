@@ -1,8 +1,10 @@
 import { User } from './user.entity';
+import { IReport } from '../reports/report_interfaces';
 export interface IUser {
   id: number;
   email: string;
   password: string;
+  reports: IReport[];
 }
 export interface IUserService {
   create(email: string, password: string): Promise<User>;

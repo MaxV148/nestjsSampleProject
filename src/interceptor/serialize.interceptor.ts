@@ -13,6 +13,7 @@ export function Serialize<T>(dto: ClassConstructor<T>) {
 }
 /*
   Verändert den Response bevor er versand wird nach dem DTO
+  Interceptor werden NACH Middleware und NACH Guards ausgeführt
  */
 export class SerializeInterceptor<T> implements NestInterceptor {
   constructor(private dto: ClassConstructor<T>) {}
